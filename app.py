@@ -87,6 +87,9 @@ education = [
     {"title": "Research Methods in Education", "link": "https://youtu.be/nv7MOoHMM2k"}
 ]
 
+@app.route("/", methods=["GET"])
+def index():
+    return "Prediction Model"
 
 @app.route('/predict', methods=['POST'])
 def predict():
