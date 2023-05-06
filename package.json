@@ -1,0 +1,28 @@
+{
+  "name": "legendary-sniffle-NLP-model",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PulasthiAbey/legendary-sniffle-NLP-model.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PulasthiAbey/legendary-sniffle-NLP-model/issues"
+  },
+  "homepage": "https://github.com/PulasthiAbey/legendary-sniffle-NLP-model#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
