@@ -203,57 +203,56 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   const data = req.body.data;
+  console.log(data)
   const request_data = [];
   const response_data = [];
 
-  const request_array = data.split(",");
-
-  for (let index = 0; index < request_array.length; index++) {
-    if (request_array[index] !== '"') {
-      request_data.push(request_array[index]);
+  for (let index = 0; index < data.length; index++) {
+    if (data[index] !== '"') {
+      request_data.push(data[index]);
     }
   }
 
   for (let index = 0; index < request_data.length; index++) {
-    if (request_array[index] === "history") {
+    if (data[index] === "history") {
       for (let i = 0; i < 3; i++) {
         const randomIndex = Math.floor(Math.random() * 10);
         const randomValue = history.splice(randomIndex, 1)[0];
         response_data.push(randomValue);
       }
     } else {
-      if (request_array[index] === "science") {
+      if (data[index] === "science") {
         for (let i = 0; i < 3; i++) {
           const randomIndex = Math.floor(Math.random() * 10);
           const randomValue = science.splice(randomIndex, 1)[0];
           response_data.push(randomValue);
         }
       } else {
-        if (request_array[index] === "drawing") {
+        if (data[index] === "drawing") {
           for (let i = 0; i < 3; i++) {
             const randomIndex = Math.floor(Math.random() * 10);
             const randomValue = drawing.splice(randomIndex, 1)[0];
             response_data.push(randomValue);
           }
         } else {
-          if (request_array[index] === "technology") {
+          if (data[index] === "technology") {
             for (let i = 0; i < 3; i++) {
               const randomIndex = Math.floor(Math.random() * 10);
               const randomValue = technology.splice(randomIndex, 1)[0];
               response_data.push(randomValue);
             }
           } else {
-            if (request_array[index] === "music") {
+            if (data[index] === "music") {
               for (let i = 0; i < 3; i++) {
                 const randomIndex = Math.floor(Math.random() * 10);
                 const randomValue = music.splice(randomIndex, 1)[0];
                 response_data.push(randomValue);
               }
             } else {
-              if (request_array[index] === "education") {
+              if (data[index] === "education") {
                 for (let i = 0; i < 3; i++) {
                   const randomIndex = Math.floor(Math.random() * 10);
-                  const randomValue = music.splice(randomIndex, 1)[0];
+                  const randomValue = education.splice(randomIndex, 1)[0];
                   response_data.push(randomValue);
                 }
               } else {
