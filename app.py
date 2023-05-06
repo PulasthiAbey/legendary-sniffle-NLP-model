@@ -78,7 +78,7 @@ def predict():
 
     request_array = data.split(',')
 
-    print(request_array[0])
+    print(request_array[1])
     return data
 
 
