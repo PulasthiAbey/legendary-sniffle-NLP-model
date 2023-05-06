@@ -73,13 +73,47 @@ education = ["Foundations of Education",
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    random_history = random.sample(history, 3)
+    
     data = request.form['data']
+    request_data = []
+    response_data = []
 
     request_array = data.split(',')
 
-    print(request_array[1])
-    return data
+    for item in request_array:
+        if '"' not in item:
+            request_data.append(item)
+
+    for item_data in request_data:
+        if "history" in item_data:
+            random_data = random.sample(history, 3)
+            response_data.append(random_data)
+        else:
+            if "science" in item_data:
+                random_data = random.sample(science, 3)
+                response_data.append(random_data)
+            else:
+                if "drawing" in item_data:
+                    random_data = random.sample(drawing, 3)
+                    response_data.append(random_data)
+                else:
+                    if "technology" in item_data:
+                        random_data = random.sample(technology, 3)
+                        response_data.append(random_data)
+                    else:
+                        if "music" in item_data:
+                            random_data = random.sample(music, 3)
+                            response_data.append(random_data)
+                        else:
+                            if "education" in item_data:
+                                random_data = random.sample(education, 3)
+                                response_data.append(random_data)
+                            else:
+                                print("Inputs are not in the parameter")
+              
+
+    print(response_data[1])
+    return response_data
 
 
 if __name__ == '__main__':
